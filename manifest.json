@@ -1,0 +1,43 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Poster Addon 5.1",
+  "short_name": "PS",
+  "description": "This software works with C# apps.",
+  "version": "5.1",
+  "content_scripts": [
+    {
+      "matches": ["https://*.craigslist.org/*","https://*.craigslist.ca/*"],
+      "js": ["js/jquery.js","js/mco_js.js","js/sendkey.js"]
+    }
+  ],
+  "permissions": [
+    "clipboardWrite",
+    "clipboardRead",
+    "storage",
+    "contextMenus",
+    "tts",
+	"tabs", 
+	"browsingData", 
+	"contextMenus", 
+	"chrome://favicon/", 
+	"history", 
+	"cookies", 
+	"http://*/*", 
+	"https://*/*"
+  ],
+  "background": {
+        "scripts": ["js/jquery.js","js/background.js"]
+    },
+  "icons": {
+        "19": "img/mco_19.png",
+        "48": "img/mco_48.png",
+        "128": "img/mco_128.png"
+  },
+    "browser_action": {
+        "default_icon": {
+            "19": "img/mco_19.png",
+            "38": "img/mco_48.png"
+        }
+    }
+}
